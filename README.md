@@ -1,54 +1,52 @@
 # NBA-Game-Outcome-Prediction-Project
 
-This repository contains code for predicting the outcomes of NBA games using machine learning techniques. The main goal of this project is to develop a predictive model that can accurately forecast whether a team will win or lose a basketball game based on various features.
+# Predicting NBA Game Outcomes Using Machine Learning
 
-Getting Started
-Prerequisites
-Before you begin, ensure you have the following dependencies installed:
+This repository contains the code and analysis for predicting NBA game outcomes using machine learning techniques. The goal of this project is to develop a predictive model that can accurately forecast the results of NBA games.
 
-Python (>= 3.6)
-pandas
-numpy
-scikit-learn
-You can install these dependencies using pip:
+## Table of Contents
+- [Introduction](#introduction)
+- [Requirements](#requirements)
+- [Usage](#usage)
+- [Methodology](#methodology)
+- [Results](#results)
+- [Conclusion](#conclusion)
+- [License](#license)
 
-bash
-Copy code
+## Introduction
+In this project, we use historical NBA game data to train a predictive model that can determine the likelihood of a team winning a game. The project involves data preprocessing, feature selection, model training, and evaluation.
+
+## Requirements
+To run the code in this repository, you'll need the following libraries and tools:
+- Python 3.x
+- pandas
+- numpy
+- scikit-learn
+
+You can install these dependencies using the following command:
 pip install pandas numpy scikit-learn
-Installation
-Clone this repository to your local machine using:
-bash
-Copy code
-git clone https://github.com/your-username/nba-game-prediction.git
-Navigate to the project directory:
-bash
-Copy code
-cd nba-game-prediction
-Run the Python script to execute the code:
-bash
-Copy code
-python nba_prediction.py
-Code Overview
-The code in nba_prediction.py performs the following steps:
 
-Imports necessary libraries: pandas, numpy, scikit-learn modules.
-Reads the NBA game data from the 'nba_games.csv' file.
-Preprocesses the data, including sorting, resetting the index, and removing unnecessary columns.
-Defines a function to add a 'target' column indicating whether the team won the next game.
-Handles missing values and converts target values to integers.
-Performs feature selection using the Sequential Feature Selector and a Ridge Classifier.
-Scales the selected features using MinMaxScaler.
-Defines a function to perform time-based backtesting of the model.
-Iterates through seasons to train and test the model using backtesting.
-Calculates accuracy for the predictions.
-Implements additional data preprocessing steps, such as rolling averages and shifting columns.
-Merges the transformed data with shifted columns.
-Performs feature selection and backtesting on the extended dataset.
-Calculates accuracy for the extended model predictions.
-Results
-The accuracy of the predictive model for both the initial and extended dataset is calculated using time-based backtesting. The final accuracy values are displayed in the script's output.
 
-Conclusion
-This project demonstrates the process of building a machine learning model for predicting NBA game outcomes. The code provided can be further extended and customized to improve model performance, experiment with different algorithms, and explore additional features for better predictions.
+## Usage
+1. Clone this repository to your local machine.
+2. Download the NBA game data CSV file and place it in the project directory.
+3. Open the Jupyter Notebook `NBA_Game_Prediction.ipynb` to see the detailed code and analysis.
 
-Feel free to contribute to this project by improving the code, exploring alternative algorithms, or sharing insights about the NBA game prediction task.
+## Methodology
+The project follows these main steps:
+1. Data Loading and Preprocessing: The NBA game data is loaded using pandas, and preprocessing steps include sorting, removing unnecessary columns, handling missing values, and scaling features.
+2. Feature Selection: SequentialFeatureSelector is used to select relevant features for predicting game outcomes.
+3. Model Training: RidgeClassifier is trained on the selected features to predict game outcomes.
+4. Backtesting: The model is tested on historical data using a time series cross-validation approach.
+5. Rolling Averages: Rolling averages of team performance metrics are computed and incorporated into the model.
+6. Shifted Columns: Additional features are created by shifting relevant columns to capture previous game data.
+7. Model Evaluation: The model's performance is evaluated using accuracy scores.
+
+## Results
+The trained model achieved an accuracy of [insert accuracy score here] on the test data. This indicates that the model is capable of predicting NBA game outcomes with a reasonable level of accuracy.
+
+## Conclusion
+This project demonstrates the application of machine learning techniques to predict NBA game outcomes. While the current model shows promising results, further optimization and exploration of other algorithms could potentially improve its accuracy.
+
+## License
+This project is licensed under the [MIT License](LICENSE).
